@@ -1,38 +1,40 @@
 package com.example.adder;
 
-import junit.framework.Test;
 import junit.framework.TestCase;
-import junit.framework.TestSuite;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
+public class AppTest extends TestCase {
+
+    // ADD Test
+    public void testAdd() {
+        int result = App.add(10, 20);
+        assertEquals(30, result);
     }
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
+    // SUB Test
+    public void testSub() {
+        int result = App.sub(50, 20);
+        assertEquals(30, result);
     }
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
+    // MUL Test
+    public void testMul() {
+        int result = App.mul(5, 6);
+        assertEquals(30, result);
+    }
+
+    // DIV Test
+    public void testDiv() {
+        int result = App.div(40, 8);
+        assertEquals(5, result);
+    }
+
+    // DIV by Zero Test (optional)
+    public void testDivByZero() {
+        try {
+            App.div(10, 0);
+            fail("Division by zero should throw exception!");
+        } catch (ArithmeticException e) {
+            assertTrue(true);
+        }
     }
 }
